@@ -1,0 +1,148 @@
+body{
+    background-color: #F1F1F1;
+}
+
+.loader {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 40px auto;
+}
+
+.casino-wheel {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff3b3b 0deg 45deg,
+    #ffd93b 45deg 90deg,
+    #3bff70 90deg 135deg,
+    #3bb4ff 135deg 180deg,
+    #ff3b3b 180deg 225deg,
+    #ffd93b 225deg 270deg,
+    #3bff70 270deg 315deg,
+    #3bb4ff 315deg 360deg
+  );
+  animation: spin 1.2s linear infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 60px;
+}
+
+
+.product-left {
+    display: flex;
+    justify-content: center;
+}
+
+.main-image {
+    max-width: 420px;
+}
+
+.product-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.product-price {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.product-size-block .label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.size-text {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #000;
+    border-radius: 999px;
+    margin-bottom: 24px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 16px;
+    border-radius: 999px;
+    background: #555;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: not-allowed;
+    margin-bottom: 32px;
+}
+
+.product-description {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .container {
+  display: grid;
+    grid-template-columns: 1fr;}
+
+    .main-image {
+        max-width: 100%;
+    }
+}
+
+.carousel-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#carouselThumbs img {
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+#carouselThumbs img.active {
+  opacity: 1;
+  outline: 2px solid black;
+}
+
+.product-left{
+    display: flex;
+    flex-direction: column
+}

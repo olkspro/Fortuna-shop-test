@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+}
+
+.text-white {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.logo h2 a {
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background: #111;
+    transition: right 0.3s ease;
+    padding-top: 80px;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 50px;
+    font-size: 25px;
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9;
+}
+
+/* меню поверх overlay */
+.nav {
+  z-index: 10;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+footer {
+  height: 50vh;
+  font-family: "Inter", sans-serif;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  background-color: #0a0a0a;
+}
+
+.footer-logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.footer-other {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* лінія при наведенні */
+}
+
+footer p {
+  color: #aaa;
+  font-size: 16px;
+  margin: 0;
+  background-color: #0a0a0a;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
+
+
+
+.products-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product img {
+  border-radius: 10px;
+}
+
+.card {
+  border: none;
+}
+
+.card-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.product-price {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.loader {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 40px auto;
+  padding-top: 80px;
+}
+
+.casino-wheel {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff3b3b 0deg 45deg,
+    #ffd93b 45deg 90deg,
+    #3bff70 90deg 135deg,
+    #3bb4ff 135deg 180deg,
+    #ff3b3b 180deg 225deg,
+    #ffd93b 225deg 270deg,
+    #3bff70 270deg 315deg,
+    #3bb4ff 315deg 360deg
+  );
+  animation: spin 1.2s linear infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.products-row {
+  padding: 80px 50px;
+}
+
+.card{
+  width: 18rem;
+}
+
+@media (max-width: 600px) {
+.products-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+width: 9rem;
+}
+}

@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+}
+
+.text-white {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.logo h2 a {
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background: #111;
+    transition: right 0.3s ease;
+    padding-top: 80px;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 50px;
+    font-size: 25px;
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9;
+}
+
+/* меню поверх overlay */
+.nav {
+  z-index: 10;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+footer {
+  height: 50vh;
+  font-family: "Inter", sans-serif;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  background-color: #0a0a0a;
+}
+
+.footer-logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.footer-other {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* лінія при наведенні */
+}
+
+footer p {
+  color: #aaa;
+  font-size: 16px;
+  margin: 0;
+  background-color: #0a0a0a;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
+.page {
+  padding: 60px 0; /* вертикальні відступи від хедера/футера */
+}
+
+.container {
+  max-width: 1200px;   /* ширина як на скріні */
+  margin: 0 auto;      /* центрує */
+  padding: 0 20px;     /* відступи зліва/справа на мобілці */
+}
+
+.container h2{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.container{
+    font-family: 'Inter', sans-serif;
+}
+
+/* @media (max-width: 768px) {
+  .page {
+    padding: 40px 0;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+} */
+
+
